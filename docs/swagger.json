@@ -1,0 +1,239 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "一只轻量级BOM管理器",
+        "title": "AzuBOM",
+        "contact": {},
+        "version": "1.0.1233"
+    },
+    "host": "127.0.0.1:8080",
+    "basePath": "/",
+    "paths": {
+        "/v1/component": {
+            "get": {
+                "description": "获取元件列表",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "元件"
+                ],
+                "summary": "获取元件",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "元件ID(留空返回所有)",
+                        "name": "component_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "description": "更新元件",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "元件"
+                ],
+                "summary": "更新元件",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "元件ID",
+                        "name": "component_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "类型",
+                        "name": "component_type",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "数值",
+                        "name": "component_values",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "误差",
+                        "name": "component_deviation",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "封装",
+                        "name": "component_size",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "数量",
+                        "name": "component_PCS",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            },
+            "post": {
+                "description": "添加新元件",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "元件"
+                ],
+                "summary": "添加新元件",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "类型",
+                        "name": "component_type",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "数值",
+                        "name": "component_values",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "误差",
+                        "name": "component_deviation",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "封装",
+                        "name": "component_size",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "数量",
+                        "name": "component_PCS",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            },
+            "delete": {
+                "description": "删除元件",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "元件"
+                ],
+                "summary": "删除元件",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "元件ID",
+                        "name": "component_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/type": {
+            "get": {
+                "description": "获取类型",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "类型"
+                ],
+                "summary": "获取类型",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "类型ID(留空返回所有)",
+                        "name": "type_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            },
+            "put": {
+                "description": "更新类型",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "类型"
+                ],
+                "summary": "更新类型",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "类型ID",
+                        "name": "type_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "名称",
+                        "name": "type_name",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            },
+            "post": {
+                "description": "添加类型",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "类型"
+                ],
+                "summary": "添加类型",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "名称",
+                        "name": "type_name",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            },
+            "delete": {
+                "description": "删除类型",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "类型"
+                ],
+                "summary": "删除类型",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "类型ID",
+                        "name": "type_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

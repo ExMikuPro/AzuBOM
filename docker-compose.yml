@@ -1,0 +1,27 @@
+version: "1.0"
+
+services:
+  app:
+    container_name: "azuBOM"
+    build: ./
+    ports:
+      - "8080:80"
+
+    networks:
+      - AzuBOM
+
+  mongo:
+    container_name: "mongoDB"
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admins
+      MONGO_INITDB_ROOT_PASSWORD: admins
+
+    ports:
+      - "27017:27017"
+    networks:
+      - AzuBOM
+
+networks:
+  AzuBOM:
+    external: false

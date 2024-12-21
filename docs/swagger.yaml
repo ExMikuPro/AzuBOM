@@ -1,0 +1,165 @@
+basePath: /
+host: 127.0.0.1:8080
+info:
+  contact: {}
+  description: 一只轻量级BOM管理器
+  title: AzuBOM
+  version: 1.0.1233
+paths:
+  /v1/component:
+    delete:
+      description: 删除元件
+      parameters:
+      - description: 元件ID
+        in: query
+        name: component_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 删除元件
+      tags:
+      - 元件
+    get:
+      description: 获取元件列表
+      parameters:
+      - description: 元件ID(留空返回所有)
+        in: query
+        name: component_id
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 获取元件
+      tags:
+      - 元件
+    post:
+      description: 添加新元件
+      parameters:
+      - description: 类型
+        in: query
+        name: component_type
+        required: true
+        type: string
+      - description: 数值
+        in: query
+        name: component_values
+        required: true
+        type: string
+      - description: 误差
+        in: query
+        name: component_deviation
+        required: true
+        type: string
+      - description: 封装
+        in: query
+        name: component_size
+        required: true
+        type: string
+      - description: 数量
+        in: query
+        name: component_PCS
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 添加新元件
+      tags:
+      - 元件
+    put:
+      description: 更新元件
+      parameters:
+      - description: 元件ID
+        in: query
+        name: component_id
+        required: true
+        type: string
+      - description: 类型
+        in: query
+        name: component_type
+        type: string
+      - description: 数值
+        in: query
+        name: component_values
+        type: string
+      - description: 误差
+        in: query
+        name: component_deviation
+        type: string
+      - description: 封装
+        in: query
+        name: component_size
+        type: string
+      - description: 数量
+        in: query
+        name: component_PCS
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 更新元件
+      tags:
+      - 元件
+  /v1/type:
+    delete:
+      description: 删除类型
+      parameters:
+      - description: 类型ID
+        in: query
+        name: type_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 删除类型
+      tags:
+      - 类型
+    get:
+      description: 获取类型
+      parameters:
+      - description: 类型ID(留空返回所有)
+        in: query
+        name: type_id
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 获取类型
+      tags:
+      - 类型
+    post:
+      description: 添加类型
+      parameters:
+      - description: 名称
+        in: query
+        name: type_name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 添加类型
+      tags:
+      - 类型
+    put:
+      description: 更新类型
+      parameters:
+      - description: 类型ID
+        in: query
+        name: type_id
+        required: true
+        type: string
+      - description: 名称
+        in: query
+        name: type_name
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 更新类型
+      tags:
+      - 类型
+swagger: "2.0"
